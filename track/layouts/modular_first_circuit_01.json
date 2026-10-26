@@ -1,0 +1,475 @@
+{
+  "version": 1,
+  "id": "modular_first_circuit_01",
+  "name": "first_circuit",
+  "cell_size": 90,
+  "road_width": 14,
+  "start": {
+    "tile": "tile_3",
+    "heading": "north"
+  },
+  "tiles": [
+    {
+      "id": "tile_1",
+      "kind": "straight",
+      "x": -20,
+      "y": 5,
+      "rotation": 0
+    },
+    {
+      "id": "tile_2",
+      "kind": "straight",
+      "x": -20,
+      "y": 6,
+      "rotation": 0
+    },
+    {
+      "id": "tile_3",
+      "kind": "straight",
+      "x": -20,
+      "y": 7,
+      "rotation": 0
+    },
+    {
+      "id": "tile_4",
+      "kind": "straight",
+      "x": -20,
+      "y": 8,
+      "rotation": 0
+    },
+    {
+      "id": "tile_5",
+      "kind": "straight",
+      "x": -20,
+      "y": 9,
+      "rotation": 0
+    },
+    {
+      "id": "tile_25",
+      "kind": "straight",
+      "x": -26,
+      "y": 11,
+      "rotation": 90
+    },
+    {
+      "id": "tile_20",
+      "kind": "straight",
+      "x": -21,
+      "y": 11,
+      "rotation": 270
+    },
+    {
+      "id": "tile_21",
+      "kind": "straight",
+      "x": -22,
+      "y": 11,
+      "rotation": 270
+    },
+    {
+      "id": "tile_24",
+      "kind": "straight",
+      "x": -22,
+      "y": 6,
+      "rotation": 0
+    },
+    {
+      "id": "tile_26",
+      "kind": "straight",
+      "x": -22,
+      "y": 5,
+      "rotation": 0
+    },
+    {
+      "id": "tile_27",
+      "kind": "corner",
+      "x": -20,
+      "y": 4,
+      "rotation": 180
+    },
+    {
+      "id": "tile_28",
+      "kind": "corner",
+      "x": -22,
+      "y": 4,
+      "rotation": 270
+    },
+    {
+      "id": "tile_29",
+      "kind": "straight",
+      "x": -21,
+      "y": 4,
+      "rotation": 270
+    },
+    {
+      "id": "tile_35",
+      "kind": "straight",
+      "x": -27,
+      "y": 9,
+      "rotation": 90
+    },
+    {
+      "id": "tile_36",
+      "kind": "corner",
+      "x": -28,
+      "y": 9,
+      "rotation": 270
+    },
+    {
+      "id": "tile_37",
+      "kind": "straight",
+      "x": -28,
+      "y": 10,
+      "rotation": 0
+    },
+    {
+      "id": "tile_38",
+      "kind": "corner",
+      "x": -28,
+      "y": 11,
+      "rotation": 0
+    },
+    {
+      "id": "tile_39",
+      "kind": "straight",
+      "x": -27,
+      "y": 11,
+      "rotation": 90
+    },
+    {
+      "id": "tile_42",
+      "kind": "straight",
+      "x": -23,
+      "y": 11,
+      "rotation": 90
+    },
+    {
+      "id": "tile_31",
+      "kind": "corner",
+      "x": -26,
+      "y": 9,
+      "rotation": 180
+    },
+    {
+      "id": "tile_32",
+      "kind": "corner",
+      "x": -26,
+      "y": 10,
+      "rotation": 0
+    },
+    {
+      "id": "tile_33",
+      "kind": "corner",
+      "x": -25,
+      "y": 10,
+      "rotation": 90
+    },
+    {
+      "id": "tile_34",
+      "kind": "corner",
+      "x": -25,
+      "y": 8,
+      "rotation": 180
+    },
+    {
+      "id": "tile_43",
+      "kind": "straight",
+      "x": -25,
+      "y": 9,
+      "rotation": 180
+    },
+    {
+      "id": "tile_44",
+      "kind": "corner",
+      "x": -26,
+      "y": 8,
+      "rotation": 0
+    },
+    {
+      "id": "tile_45",
+      "kind": "corner",
+      "x": -26,
+      "y": 7,
+      "rotation": 180
+    },
+    {
+      "id": "tile_46",
+      "kind": "corner",
+      "x": -27,
+      "y": 7,
+      "rotation": 270
+    },
+    {
+      "id": "tile_47",
+      "kind": "corner",
+      "x": -27,
+      "y": 8,
+      "rotation": 90
+    },
+    {
+      "id": "tile_48",
+      "kind": "corner",
+      "x": -28,
+      "y": 8,
+      "rotation": 0
+    },
+    {
+      "id": "tile_49",
+      "kind": "straight",
+      "x": -28,
+      "y": 7,
+      "rotation": 0
+    },
+    {
+      "id": "tile_50",
+      "kind": "corner",
+      "x": -28,
+      "y": 6,
+      "rotation": 270
+    },
+    {
+      "id": "tile_51",
+      "kind": "corner",
+      "x": -27,
+      "y": 6,
+      "rotation": 90
+    },
+    {
+      "id": "tile_52",
+      "kind": "corner",
+      "x": -27,
+      "y": 5,
+      "rotation": 270
+    },
+    {
+      "id": "tile_53",
+      "kind": "straight",
+      "x": -26,
+      "y": 5,
+      "rotation": 270
+    },
+    {
+      "id": "tile_54",
+      "kind": "straight",
+      "x": -25,
+      "y": 5,
+      "rotation": 270
+    },
+    {
+      "id": "tile_55",
+      "kind": "straight",
+      "x": -24,
+      "y": 5,
+      "rotation": 270
+    },
+    {
+      "id": "tile_56",
+      "kind": "corner",
+      "x": -23,
+      "y": 5,
+      "rotation": 180
+    },
+    {
+      "id": "tile_57",
+      "kind": "straight",
+      "x": -23,
+      "y": 6,
+      "rotation": 180
+    },
+    {
+      "id": "tile_58",
+      "kind": "corner",
+      "x": -23,
+      "y": 7,
+      "rotation": 90
+    },
+    {
+      "id": "tile_59",
+      "kind": "corner",
+      "x": -24,
+      "y": 7,
+      "rotation": 270
+    },
+    {
+      "id": "tile_22",
+      "kind": "corner",
+      "x": -24,
+      "y": 8,
+      "rotation": 0
+    },
+    {
+      "id": "tile_23",
+      "kind": "corner",
+      "x": -23,
+      "y": 8,
+      "rotation": 180
+    },
+    {
+      "id": "tile_30",
+      "kind": "corner",
+      "x": -23,
+      "y": 9,
+      "rotation": 90
+    },
+    {
+      "id": "tile_60",
+      "kind": "corner",
+      "x": -24,
+      "y": 9,
+      "rotation": 270
+    },
+    {
+      "id": "tile_61",
+      "kind": "corner",
+      "x": -24,
+      "y": 10,
+      "rotation": 0
+    },
+    {
+      "id": "tile_62",
+      "kind": "straight",
+      "x": -23,
+      "y": 10,
+      "rotation": 90
+    },
+    {
+      "id": "tile_63",
+      "kind": "corner",
+      "x": -22,
+      "y": 10,
+      "rotation": 90
+    },
+    {
+      "id": "tile_64",
+      "kind": "corner",
+      "x": -22,
+      "y": 9,
+      "rotation": 270
+    },
+    {
+      "id": "tile_65",
+      "kind": "corner",
+      "x": -21,
+      "y": 9,
+      "rotation": 90
+    },
+    {
+      "id": "tile_66",
+      "kind": "corner",
+      "x": -21,
+      "y": 7,
+      "rotation": 180
+    },
+    {
+      "id": "tile_67",
+      "kind": "corner",
+      "x": -22,
+      "y": 7,
+      "rotation": 0
+    },
+    {
+      "id": "tile_68",
+      "kind": "straight",
+      "x": -21,
+      "y": 8,
+      "rotation": 0
+    },
+    {
+      "id": "tile_6",
+      "kind": "straight",
+      "x": -20,
+      "y": 10,
+      "rotation": 0
+    },
+    {
+      "id": "tile_7",
+      "kind": "corner",
+      "x": -20,
+      "y": 11,
+      "rotation": 90
+    },
+    {
+      "id": "tile_8",
+      "kind": "corner",
+      "x": -24,
+      "y": 11,
+      "rotation": 270
+    },
+    {
+      "id": "tile_9",
+      "kind": "corner",
+      "x": -24,
+      "y": 12,
+      "rotation": 0
+    },
+    {
+      "id": "tile_10",
+      "kind": "corner",
+      "x": -23,
+      "y": 12,
+      "rotation": 180
+    },
+    {
+      "id": "tile_11",
+      "kind": "corner",
+      "x": -23,
+      "y": 13,
+      "rotation": 90
+    },
+    {
+      "id": "tile_13",
+      "kind": "corner",
+      "x": -25,
+      "y": 11,
+      "rotation": 180
+    },
+    {
+      "id": "tile_12",
+      "kind": "corner",
+      "x": -25,
+      "y": 12,
+      "rotation": 90
+    },
+    {
+      "id": "tile_14",
+      "kind": "corner",
+      "x": -26,
+      "y": 12,
+      "rotation": 270
+    },
+    {
+      "id": "tile_15",
+      "kind": "corner",
+      "x": -26,
+      "y": 13,
+      "rotation": 0
+    },
+    {
+      "id": "tile_16",
+      "kind": "corner",
+      "x": -25,
+      "y": 14,
+      "rotation": 0
+    },
+    {
+      "id": "tile_17",
+      "kind": "corner",
+      "x": -24,
+      "y": 14,
+      "rotation": 90
+    },
+    {
+      "id": "tile_18",
+      "kind": "corner",
+      "x": -25,
+      "y": 13,
+      "rotation": 180
+    },
+    {
+      "id": "tile_19",
+      "kind": "corner",
+      "x": -24,
+      "y": 13,
+      "rotation": 270
+    }
+  ]
+}

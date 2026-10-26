@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+*.log
+.DS_Store
+.~lock.*#
+/build/
+/vendor/
+/track/modular/
+/track/textures/
+/track/*.blend*

@@ -1,0 +1,42 @@
+:root { color-scheme: dark; font-family: system-ui, sans-serif; background: #151d25; color: #ecf1f6; }
+body { margin: 0; }
+header { padding: 1rem 1.25rem; background: #202d39; }
+h1 { margin: 0 0 .7rem; font-size: 1.4rem; }
+small { font-size: .8rem; font-weight: normal; color: #becddb; }
+nav, .row { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+main { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 1rem; padding: 1rem; }
+aside, section { min-width: 0; }
+fieldset { border: 1px solid #536777; border-radius: .4rem; margin: 0 0 .8rem; }
+label { display: block; margin: .6rem 0; }
+input, select { width: 100%; box-sizing: border-box; margin-top: .25rem; padding: .4rem; }
+button, input, select { font: inherit; border: 1px solid #6d8597; border-radius: .25rem; background: #263746; color: inherit; }
+button { padding: .4rem .65rem; cursor: pointer; }
+button:hover { background: #3b5368; }
+button:disabled { opacity: .4; cursor: default; }
+button[aria-pressed="true"] { background: #226c8c; border-color: #81dbff; }
+button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid #ffc76a; }
+#tools { display: grid; gap: .35rem; margin-bottom: .6rem; }
+output { font-size: .8rem; display: block; margin: .35rem 0; }
+p { font-size: .85rem; line-height: 1.5; }
+#grid { display: block; width: 100%; height: min(68vh, 750px); min-height: 350px; background: #10181f; margin: .7rem 0; touch-action: none; cursor: crosshair; }
+.cell { fill: #263e36; stroke: #597267; stroke-width: .015; }
+.road { fill: none; stroke: #bcc5ce; stroke-linecap: butt; }
+.centerline { fill: none; stroke: #334454; stroke-width: .025; stroke-dasharray: .07 .07; }
+.start { fill: #ffe08a; stroke: #242424; stroke-width: .015; }
+.port { fill: #ff6b6b; stroke: #2c0000; stroke-width: .025; }
+.pickup { stroke: #10181f; stroke-width: .025; cursor: pointer; }
+.pickup.item { fill: #ffb34f; }
+.pickup.nitro_small { fill: #70e5ff; }
+.pickup.nitro_big { fill: #b091ff; }
+.pickup[data-selected="true"] { stroke: white; stroke-width: .045; }
+#ghost { opacity: .5; }
+#status { padding: .8rem; border-left: 4px solid #f6bd60; background: #263746; }
+#status[data-valid="true"] { border-color: #71dca4; }
+#notice { color: #ffbf94; min-height: 1.3em; }
+details { margin-top: 1rem; }
+pre { overflow: auto; background: #0f161d; padding: .8rem; font-size: .8rem; }
+@media (max-width: 750px) {
+  main { grid-template-columns: 1fr; }
+  aside { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+  aside p { margin: .2rem; }
+}

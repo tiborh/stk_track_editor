@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "id": "modular_pickup_oval",
+  "name": "Pickup Oval",
+  "cell_size": 90,
+  "road_width": 14,
+  "start": {"tile": "start", "heading": "north"},
+  "tiles": [
+    {"id": "start", "kind": "straight", "x": 0, "y": 0, "rotation": 0},
+    {"id": "north_west", "kind": "corner", "x": 0, "y": 1, "rotation": 0},
+    {"id": "north_east", "kind": "corner", "x": 1, "y": 1, "rotation": 90},
+    {"id": "east", "kind": "straight", "x": 1, "y": 0, "rotation": 0},
+    {"id": "south_east", "kind": "corner", "x": 1, "y": -1, "rotation": 180},
+    {"id": "south_west", "kind": "corner", "x": 0, "y": -1, "rotation": 270}
+  ],
+  "pickups": [
+    {"id": "box_left", "kind": "item", "tile": "start", "along": 0.8, "lateral": -3},
+    {"id": "box_middle", "kind": "item", "tile": "start", "along": 0.8, "lateral": 0},
+    {"id": "box_right", "kind": "item", "tile": "start", "along": 0.8, "lateral": 3},
+    {"id": "corner_small", "kind": "nitro_small", "tile": "north_west", "along": 0.5, "lateral": 0},
+    {"id": "east_big", "kind": "nitro_big", "tile": "east", "along": 0.5, "lateral": 0},
+    {"id": "east_left", "kind": "item", "tile": "east", "along": 0.2, "lateral": -3},
+    {"id": "east_middle", "kind": "item", "tile": "east", "along": 0.2, "lateral": 0},
+    {"id": "east_right", "kind": "item", "tile": "east", "along": 0.2, "lateral": 3},
+    {"id": "south_small", "kind": "nitro_small", "tile": "south_east", "along": 0.5, "lateral": -2},
+    {"id": "home_big", "kind": "nitro_big", "tile": "south_west", "along": 0.5, "lateral": 0}
+  ]
+}

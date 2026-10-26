@@ -1,0 +1,309 @@
+{
+  "version": 2,
+  "id": "modular_double_clover",
+  "name": "double_clover",
+  "cell_size": 90,
+  "road_width": 14,
+  "start": {
+    "tile": "tile_2",
+    "heading": "north"
+  },
+  "tiles": [
+    {
+      "id": "tile_3",
+      "kind": "corner",
+      "x": -5,
+      "y": 0,
+      "rotation": 0
+    },
+    {
+      "id": "tile_4",
+      "kind": "corner",
+      "x": -4,
+      "y": 0,
+      "rotation": 180
+    },
+    {
+      "id": "tile_5",
+      "kind": "corner",
+      "x": -4,
+      "y": 1,
+      "rotation": 90
+    },
+    {
+      "id": "tile_6",
+      "kind": "corner",
+      "x": -5,
+      "y": 1,
+      "rotation": 270
+    },
+    {
+      "id": "tile_7",
+      "kind": "corner",
+      "x": -5,
+      "y": 2,
+      "rotation": 90
+    },
+    {
+      "id": "tile_8",
+      "kind": "corner",
+      "x": -6,
+      "y": 2,
+      "rotation": 0
+    },
+    {
+      "id": "tile_9",
+      "kind": "corner",
+      "x": -6,
+      "y": 1,
+      "rotation": 180
+    },
+    {
+      "id": "tile_10",
+      "kind": "corner",
+      "x": -7,
+      "y": 1,
+      "rotation": 0
+    },
+    {
+      "id": "tile_11",
+      "kind": "corner",
+      "x": -7,
+      "y": 0,
+      "rotation": 270
+    },
+    {
+      "id": "tile_12",
+      "kind": "corner",
+      "x": -6,
+      "y": 0,
+      "rotation": 90
+    },
+    {
+      "id": "tile_1",
+      "kind": "straight",
+      "x": -6,
+      "y": -1,
+      "rotation": 180
+    },
+    {
+      "id": "tile_2",
+      "kind": "straight",
+      "x": -5,
+      "y": -1,
+      "rotation": 180
+    },
+    {
+      "id": "tile_13",
+      "kind": "corner",
+      "x": -5,
+      "y": -2,
+      "rotation": 270
+    },
+    {
+      "id": "tile_14",
+      "kind": "corner",
+      "x": -4,
+      "y": -2,
+      "rotation": 90
+    },
+    {
+      "id": "tile_15",
+      "kind": "corner",
+      "x": -4,
+      "y": -3,
+      "rotation": 180
+    },
+    {
+      "id": "tile_16",
+      "kind": "corner",
+      "x": -5,
+      "y": -3,
+      "rotation": 0
+    },
+    {
+      "id": "tile_17",
+      "kind": "corner",
+      "x": -5,
+      "y": -4,
+      "rotation": 180
+    },
+    {
+      "id": "tile_18",
+      "kind": "corner",
+      "x": -6,
+      "y": -4,
+      "rotation": 270
+    },
+    {
+      "id": "tile_19",
+      "kind": "corner",
+      "x": -6,
+      "y": -3,
+      "rotation": 90
+    },
+    {
+      "id": "tile_20",
+      "kind": "corner",
+      "x": -7,
+      "y": -3,
+      "rotation": 270
+    },
+    {
+      "id": "tile_21",
+      "kind": "corner",
+      "x": -7,
+      "y": -2,
+      "rotation": 0
+    },
+    {
+      "id": "tile_22",
+      "kind": "corner",
+      "x": -6,
+      "y": -2,
+      "rotation": 180
+    }
+  ],
+  "pickups": [
+    {
+      "id": "pickup_1",
+      "kind": "item",
+      "tile": "tile_3",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_2",
+      "kind": "item",
+      "tile": "tile_4",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_3",
+      "kind": "item",
+      "tile": "tile_5",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_4",
+      "kind": "item",
+      "tile": "tile_6",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_5",
+      "kind": "item",
+      "tile": "tile_7",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_6",
+      "kind": "nitro_small",
+      "tile": "tile_8",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_7",
+      "kind": "nitro_small",
+      "tile": "tile_9",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_8",
+      "kind": "nitro_small",
+      "tile": "tile_10",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_9",
+      "kind": "nitro_small",
+      "tile": "tile_11",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_10",
+      "kind": "nitro_small",
+      "tile": "tile_12",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_11",
+      "kind": "item",
+      "tile": "tile_22",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_12",
+      "kind": "item",
+      "tile": "tile_21",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_13",
+      "kind": "item",
+      "tile": "tile_20",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_14",
+      "kind": "item",
+      "tile": "tile_19",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_15",
+      "kind": "item",
+      "tile": "tile_18",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_16",
+      "kind": "nitro_big",
+      "tile": "tile_17",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_17",
+      "kind": "nitro_big",
+      "tile": "tile_16",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_18",
+      "kind": "nitro_big",
+      "tile": "tile_15",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_19",
+      "kind": "nitro_big",
+      "tile": "tile_14",
+      "along": 0.5,
+      "lateral": 0
+    },
+    {
+      "id": "pickup_20",
+      "kind": "nitro_big",
+      "tile": "tile_13",
+      "along": 0.5,
+      "lateral": 0
+    }
+  ]
+}

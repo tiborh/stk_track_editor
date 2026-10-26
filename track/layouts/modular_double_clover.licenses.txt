@@ -1,0 +1,16 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Double Clover
+Source: https://github.com/tiborh/stk_track_editor
+
+Files: *
+Copyright: 2026 tiborh
+License: CC-BY-SA-4.0
+ This original example layout and its procedurally generated geometry,
+ textures and preview are licensed under Creative Commons
+ Attribution-ShareAlike 4.0 International.
+ https://creativecommons.org/licenses/by-sa/4.0/
+Comment: Source layout: track/layouts/modular_double_clover.json.
+ No third-party artwork files are included. Music and pickup types are
+ references to assets in the separately installed game, not redistributed
+ game files. Generator source code is separately licensed GPL-3.0-or-later.
+ Record additional authors, changes and component licenses when modifying.

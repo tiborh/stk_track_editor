@@ -1,0 +1,12 @@
+diff --git a/io_antarctica_scene/stk_track_utils.py b/io_antarctica_scene/stk_track_utils.py
+--- a/io_antarctica_scene/stk_track_utils.py
++++ b/io_antarctica_scene/stk_track_utils.py
+@@ -971,7 +971,7 @@ class DrivelineExporter:
+         #start_time = bsys.time()
+         print("Writing graph file --> \t")
+         with open(sPath + "/graph.xml", "w", encoding="utf8", newline="\n") as f:
+-            f.write("<?xml version=\"1.0\"?> encoding=\"utf-8\"?>\n")
++            f.write("<?xml version=\"1.0\" encoding=\"utf-8\"?>\n")
+             f.write("<graph>\n")
+             f.write("  <!-- First define all nodes of the graph, and what quads they represent -->\n")
+             f.write("  <node-list from-quad=\"%d\" to-quad=\"%d\"/>  <!-- map each quad to a node  -->\n"\

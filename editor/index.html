@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Track Sketcher</title>
+  <link rel="stylesheet" href="/editor.css">
+  <script type="module" src="/editor.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Track Sketcher <small>flat modular circuits</small></h1>
+    <nav aria-label="Files">
+      <button id="new">New</button>
+      <button id="open">Open JSON</button>
+      <input id="file" type="file" accept=".json,application/json" hidden>
+      <button id="save">Save JSON</button>
+      <button id="oval">Load oval example</button>
+      <button id="bends">Load bends example</button>
+      <button id="pickup-oval">Load pickup example</button>
+    </nav>
+  </header>
+  <main>
+    <aside>
+      <fieldset>
+        <legend>Layout</legend>
+        <label>Name <input id="name" maxlength="80" value="My Circuit"></label>
+        <label>Track ID <input id="track-id" value="modular_my_circuit" spellcheck="false"></label>
+        <label>Cell size (m) <input id="cell-size" type="number" min="60" max="120" value="90"></label>
+        <label>Road width (m) <input id="road-width" type="number" min="10" max="18" value="14" step="0.5"></label>
+      </fieldset>
+      <fieldset>
+        <legend>Tools</legend>
+        <div id="tools">
+          <button data-tool="straight" aria-pressed="true">1 Straight</button>
+          <button data-tool="corner" aria-pressed="false">2 Corner</button>
+          <button data-tool="rotate" aria-pressed="false">3 Rotate existing</button>
+          <button data-tool="erase" aria-pressed="false">4 Erase</button>
+          <button data-tool="start" aria-pressed="false">5 Set start</button>
+          <button data-tool="pickup" aria-pressed="false">6 Place pickup</button>
+        </div>
+        <button id="rotate">R: rotate brush</button>
+        <output id="rotation">0 degrees clockwise</output>
+        <label>Start heading
+          <select id="heading">
+            <option value="north">North (up)</option>
+            <option value="east">East (right)</option>
+            <option value="south">South (down)</option>
+            <option value="west">West (left)</option>
+          </select>
+        </label>
+        <p id="start-label">Start: not set</p>
+      </fieldset>
+      <fieldset>
+        <legend>Pickups</legend>
+        <label>Kind
+          <select id="pickup-kind">
+            <option value="item">Item box</option>
+            <option value="nitro_small">Small nitro</option>
+            <option value="nitro_big">Big nitro</option>
+          </select>
+        </label>
+        <label>Along path (0-1)
+          <input id="pickup-along" type="number" min="0" max="1" step="0.05" value="0.5">
+        </label>
+        <label>Lateral offset (m, positive = canonical right)
+          <input id="pickup-lateral" type="number" step="0.5" value="0">
+        </label>
+        <label>Selected pickup
+          <select id="pickup-selection"><option value="">None (place a new pickup)</option></select>
+        </label>
+        <button id="pickup-update" disabled>Update selected</button>
+        <button id="pickup-delete" disabled>Delete selected</button>
+        <p>Choose Place pickup, then click its road module. Click a marker or choose
+          a pickup above to select it. Fields set new placements; Update selected
+          applies edits. Along runs from the piece's first port to its second,
+          independent of race direction. Leave 2 m from road edges.
+          Erasing a module also removes its pickups after confirmation.</p>
+      </fieldset>
+      <div class="row"><button id="undo" disabled>Undo</button><button id="redo" disabled>Redo</button></div>
+      <p>Click to place. Occupied cells are never replaced: erase or rotate them explicitly.
+        Set the start on a straight, with a heading along its road.</p>
+      <p>Red dots mark disconnected road ends. Unfinished drafts can be saved;
+        only a valid closed circuit can be generated.</p>
+    </aside>
+    <section aria-label="Track canvas">
+      <div class="row" aria-label="View controls">
+        <button id="left" aria-label="Pan west">Left</button>
+        <button id="up" aria-label="Pan north">Up</button>
+        <button id="down" aria-label="Pan south">Down</button>
+        <button id="right" aria-label="Pan east">Right</button>
+        <button id="zoom-in">Zoom in</button>
+        <button id="zoom-out">Zoom out</button>
+        <button id="fit">Fit track</button>
+        <output id="position">North is up; coordinates in grid cells.</output>
+      </div>
+      <svg id="grid" viewBox="-5.5 -4.5 12 9" role="img" aria-label="Editable track grid. Use the selected tool and click a cell.">
+        <defs>
+          <pattern id="cells" x="-0.5" y="-0.5" width="1" height="1" patternUnits="userSpaceOnUse">
+            <rect width="1" height="1" class="cell"></rect>
+          </pattern>
+        </defs>
+        <rect id="background" x="-100.5" y="-100.5" width="201" height="201" fill="url(#cells)"></rect>
+        <g id="tiles"></g>
+        <g id="ports"></g>
+        <g id="pickups"></g>
+        <g id="ghost" pointer-events="none"></g>
+      </svg>
+      <div id="status" role="status" aria-live="polite">Checking layout...</div>
+      <p id="notice" role="alert"></p>
+      <details>
+        <summary>Save, generate and play</summary>
+        <p>Save JSON to a chosen location (for example <code>track/layouts/my_circuit.json</code>).
+          The editor never writes workspace files, runs Blender or installs tracks.</p>
+        <pre>blender --background --factory-startup --disable-autoexec \
+  --python-exit-code 1 --python tools/build_modular_track.py -- \
+  track/layouts/my_circuit.json</pre>
+        <p>Use a new track ID to preserve reference tracks. See README.md for installation,
+          backups and the one-way Blender handoff.</p>
+      </details>
+    </section>
+  </main>
+</body>
+</html>

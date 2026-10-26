@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "id": "modular_bends",
+  "name": "Modular Bends",
+  "cell_size": 90,
+  "road_width": 14,
+  "start": {"tile": "start", "heading": "north"},
+  "tiles": [
+    {"id": "start", "kind": "straight", "x": 0, "y": 0, "rotation": 0},
+    {"id": "west", "kind": "straight", "x": 0, "y": 1, "rotation": 0},
+    {"id": "north_west", "kind": "corner", "x": 0, "y": 2, "rotation": 0},
+    {"id": "north_east", "kind": "corner", "x": 1, "y": 2, "rotation": 90},
+    {"id": "inward", "kind": "corner", "x": 1, "y": 1, "rotation": 270},
+    {"id": "outward", "kind": "corner", "x": 2, "y": 1, "rotation": 90},
+    {"id": "east", "kind": "straight", "x": 2, "y": 0, "rotation": 0},
+    {"id": "south_east", "kind": "corner", "x": 2, "y": -1, "rotation": 180},
+    {"id": "south", "kind": "straight", "x": 1, "y": -1, "rotation": 90},
+    {"id": "south_west", "kind": "corner", "x": 0, "y": -1, "rotation": 270}
+  ]
+}
