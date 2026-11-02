@@ -50,6 +50,7 @@ The initially verified platform is Linux; other platforms are not yet verified.
 | [Development guide](docs/DEVELOPMENT.md) | Diagnostics, implementation map, checks, exporter constraints and troubleshooting |
 | [Handoff](HANDOFF.md) | Current status, player feedback and next development step |
 | [Roadmap](ROADMAP.md) | Ordered future increments, status and acceptance gates |
+| [Pyodide implementation brief](docs/PYODIDE.md) | Approved browser-only delivery experiment, findings and acceptance plan |
 | [Changelog](CHANGELOG.md) | Dated changes, investigations, exact results and player feedback |
 | [Licensing](LICENSING.md) | Code, example artwork, attribution and external dependencies |
 | [Contributing](CONTRIBUTING.md) | Change scope, checks and contribution licensing |

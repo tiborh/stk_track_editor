@@ -10,6 +10,11 @@ system Blender, change game settings or overwrite accepted tracks without
 reviewing the proposed change with the player. Re-investigate compatibility
 when the environment changes or an actual failure occurs, not every session.
 
+The next approved experiment is Pyodide/GitHub Pages delivery. See the
+[implementation brief](PYODIDE.md) for the recorded findings, architecture,
+scalability constraints and acceptance checks. It is a plan, not the current
+runtime or a verified hosted deployment; the commands below remain local.
+
 ## Implementation map
 
 | File | Responsibility |

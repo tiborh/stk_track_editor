@@ -6,6 +6,12 @@ and [Development](../docs/DEVELOPMENT.md) for contributor requirements,
 expanding scope. Setup and authoring commands live in
 [Installation](../docs/INSTALLATION.md) and [Authoring](../docs/AUTHORING.md).
 
+The next approved roadmap priority is the Pyodide/GitHub Pages trial. Read
+[the implementation brief](../docs/PYODIDE.md) before starting; it records the
+inspected code, shared-core/worker design, deployment constraints, scalability
+tradeoffs and acceptance plan. It is not implemented or a verified deployment.
+Preserve the local workflow and outstanding human pickup acceptance gate.
+
 ## Commands
 
 Run commands from the repository root. The editor and ordinary Python tests

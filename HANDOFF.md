@@ -1,6 +1,6 @@
 # Current handoff
 
-Updated 2026-10-26. Start with [README](README.md) for setup and
+Updated 2026-11-02. Start with [README](README.md) for setup and
 [ROADMAP](ROADMAP.md) for scope; this file is the current development state,
 not a replacement for the guides or dated evidence in [CHANGELOG](CHANGELOG.md).
 
@@ -8,7 +8,7 @@ not a replacement for the guides or dated evidence in [CHANGELOG](CHANGELOG.md).
 
 - The visual editor supports flat straights/corners, start selection, shared
   Python diagnostics, undo/redo and versioned JSON save/load.
-- Roadmap item 1's practical kart-choice target is accepted. The suggested
+- Roadmap item 2's practical kart-choice target is accepted. The suggested
   Konqi launch and normal in-game selection work on the player's desktop.
 - The player completed a full three-lap, four-kart race on UI-authored Double
   Clover. First Circle, Modular Oval and Modular Bends remain references.
@@ -39,11 +39,17 @@ travel with generated tracks. See [LICENSING](LICENSING.md).
 
 ## Next development step
 
-Finish the focused human pickup checklist in
+Start the approved Pyodide/GitHub Pages trial, now roadmap item 1. Read the
+[implementation brief](docs/PYODIDE.md) for the architecture, inspected code,
+scalability tradeoffs, implementation sequence and acceptance checks. Reuse
+the Python core in a browser worker while preserving the local workflow.
+This is a recorded decision, not an implemented or verified deployment.
+
+The focused human pickup checklist remains outstanding in
 [Authoring](docs/AUTHORING.md#generate-and-play), including a saved/reopened
 variation, item use, both nitro sizes, respawning and a full race. Record only
-what was actually observed. Then take roadmap item 3, per-module road surfaces,
-as a separate playable increment.
+what was actually observed. The browser-delivery trial may proceed first,
+but complete that checklist before roadmap item 4, per-module road surfaces.
 
 The historical X11 `BadWindow` root cause is still unknown. Mei's missing
 exhaust-particle asset warning did not prevent isolated races; it is not an
