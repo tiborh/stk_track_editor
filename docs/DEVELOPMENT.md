@@ -33,11 +33,26 @@ node --check editor/editor.js
 python3 tools/check_track_editor_browser.py
 ```
 
-The real-browser check optionally uses already-installed Python Playwright and
-system Chromium; neither is an editor runtime dependency.
-Its optional Python dependency is pinned in `tools/requirements-browser.txt`;
-ordinary source checks and editor startup do not require it. Dependabot checks
-this file and GitHub Actions versions weekly.
+The real-browser check defaults to already-installed Python Playwright and
+system Chromium. To opt in to a pinned Playwright-managed browser, use a
+virtual environment and explicitly install the optional test dependencies:
+
+```bash
+python -m pip install -r tools/requirements-browser.txt
+python -m playwright install chromium --no-shell
+python tools/check_track_editor_browser.py --browser managed
+```
+
+These are not editor runtime dependencies. Browser checks do not download
+browsers on startup; Linux browser system libraries must also be available.
+Dependabot checks the optional requirements file and GitHub Actions versions
+weekly.
+
+GitHub Actions runs source checks on Python 3.10 and 3.13, plus a separate
+Python 3.13 managed-Chromium browser job. Only the ephemeral browser runner
+installs Playwright, Chromium and Linux browser dependencies. This exercises
+the editor's real interactions, downloads and layout round-trips, not Blender
+exports or gameplay acceptance.
 
 Copilot's agent browser tools are configured separately in
 [`.github/mcp.json`](../.github/mcp.json), using the shared `browser-tools-mcp`
