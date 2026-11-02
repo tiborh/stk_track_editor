@@ -8,6 +8,55 @@ and initial plans are historical, not current instructions. Use the README for
 the current handoff, the roadmap for future work and the guides for commands.
 Retain failures and distinguish automated checks from human acceptance.
 
+## 2026-11-02 - GitHub automation and browser CI
+
+Enabled Dependabot vulnerability alerts and security fixes, weekly pip updates
+for optional `tools/requirements-browser.txt`, and grouped GitHub Actions
+updates. Both initial update scans succeeded; the generated Actions update
+passed source checks and was merged. Python Playwright is pinned to 1.64.1 for
+optional browser testing, not added to the editor runtime.
+
+The browser checker now accepts `--browser managed` while retaining system
+Chromium as its default. A separate Ubuntu 24.04/Python 3.13 job explicitly
+installs the optional dependency, Chromium and Linux browser libraries:
+
+```bash
+python -m pip install -r tools/requirements-browser.txt
+python -m playwright install --with-deps chromium --no-shell
+python tools/check_track_editor_browser.py --browser managed
+```
+
+GitHub push, PR and merged-main browser runs passed, exercising UI-authored
+circuits, diagnostics, pickups, history, file downloads/round-trips and view
+controls. Existing Python 3.10/3.13 source jobs also passed. Locally, all 34
+standard-library tests, editor-only diagnostics, JavaScript syntax checking
+and browser-checker help passed:
+
+```bash
+python3 -m unittest discover -s tools -p 'test_*.py'
+python3 tools/diagnose.py --editor-only
+node --check editor/editor.js
+python3 tools/check_track_editor_browser.py --help
+```
+
+CodeQL default setup analyzed Python, JavaScript and Actions successfully with
+no open findings. Added dependency review for vulnerable additions at low
+severity or above. Automatic review identified its runtime-only scope default;
+verified the released action schema and explicitly included runtime,
+development and unknown scopes before merging.
+
+The active `main` ruleset requires PRs, up-to-date source matrix, browser and
+dependency-review checks, and resolved review threads, without requiring
+reviewer approval. Force pushes and branch deletion are blocked. Enabled
+private vulnerability reporting, added `SECURITY.md`, and enabled merged-branch
+deletion and per-PR auto-merge availability. Existing secret scanning and push
+protection remain enabled.
+
+No local packages, Blender/exporter checkouts, generated tracks, installed
+references or game settings changed. These source and browser checks do not
+add Blender/export validation or human gameplay acceptance; the current
+pickup acceptance checklist remains unchanged.
+
 ## 2026-10-26 - Public repository preparation and placement feedback
 
 The player tested item-box and nitro placement and reported **"they look good"**,
