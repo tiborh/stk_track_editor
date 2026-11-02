@@ -35,6 +35,16 @@ python3 tools/check_track_editor_browser.py
 
 The real-browser check optionally uses already-installed Python Playwright and
 system Chromium; neither is an editor runtime dependency.
+
+Copilot's agent browser tools are configured separately in
+[`.github/mcp.json`](../.github/mcp.json), using the shared `browser-tools-mcp`
+launcher. Follow the [browser-tools README](https://github.com/tiborh/browser-tools#readme)
+for machine setup, keep the launcher on Copilot's inherited `PATH`, and verify
+selection with `browser-tools-mcp --check`. Restart Copilot CLI in the trusted
+project and inspect `/mcp` to load it. The launcher uses a headless, isolated
+browser session and preserves this project's working directory. It does not
+provide Python Playwright for `check_track_editor_browser.py`.
+
 For generated Blender scenes:
 
 ```bash
