@@ -53,6 +53,7 @@ The initially verified platform is Linux; other platforms are not yet verified.
 | [Changelog](CHANGELOG.md) | Dated changes, investigations, exact results and player feedback |
 | [Licensing](LICENSING.md) | Code, example artwork, attribution and external dependencies |
 | [Contributing](CONTRIBUTING.md) | Change scope, checks and contribution licensing |
+| [Security policy](SECURITY.md) | Supported branch and private vulnerability reporting |
 
 ## License
 
