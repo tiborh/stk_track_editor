@@ -49,6 +49,10 @@ see Development. GitHub Actions runs source checks on Python 3.10/3.13 and a
 separate Python 3.13 managed-Chromium browser job. Optional Python dependencies
 are pinned in `tools/requirements-browser.txt`; the editor runtime stays
 standard-library-only.
+Changes to `main` require PRs with up-to-date `source (3.10)`, `source (3.13)`,
+`browser` and `dependency-review` checks and resolved review threads, not
+reviewer approval. CodeQL default setup also analyzes Python, JavaScript and
+Actions; dependency review rejects known vulnerable dependency additions.
 
 Generation runs inside Blender's bundled Python; do not install `bpy` with pip.
 Both `io_scene_spm` and `io_antarctica_scene` must exist under the exporter
