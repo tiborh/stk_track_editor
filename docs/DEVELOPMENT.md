@@ -54,6 +54,13 @@ installs Playwright, Chromium and Linux browser dependencies. This exercises
 the editor's real interactions, downloads and layout round-trips, not Blender
 exports or gameplay acceptance.
 
+Pull requests to `main` require up-to-date `source (3.10)`, `source (3.13)`,
+`browser` and `dependency-review` checks and resolved review threads, but not
+reviewer approval. Dependency review rejects newly introduced dependencies
+with known vulnerabilities at low severity or above. CodeQL default setup
+analyzes Python, JavaScript and Actions on pull requests, default-branch pushes
+and a weekly schedule.
+
 Copilot's agent browser tools are configured separately in
 [`.github/mcp.json`](../.github/mcp.json), using the shared `browser-tools-mcp`
 launcher. Follow the [browser-tools README](https://github.com/tiborh/browser-tools#readme)
