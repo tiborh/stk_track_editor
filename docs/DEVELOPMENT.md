@@ -35,6 +35,9 @@ python3 tools/check_track_editor_browser.py
 
 The real-browser check optionally uses already-installed Python Playwright and
 system Chromium; neither is an editor runtime dependency.
+Its optional Python dependency is pinned in `tools/requirements-browser.txt`;
+ordinary source checks and editor startup do not require it. Dependabot checks
+this file and GitHub Actions versions weekly.
 
 Copilot's agent browser tools are configured separately in
 [`.github/mcp.json`](../.github/mcp.json), using the shared `browser-tools-mcp`
