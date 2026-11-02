@@ -183,7 +183,7 @@ and use the granted item, collect both nitro sizes and use nitro, revisit pickup
 locations after respawning, and check that the AI can race and collect sensibly.
 Also save/reopen a pickup-equipped variation in the editor and generate it.
 Report any misplaced, buried, unreachable or non-respawning pickup. Do not mark
-roadmap item 2 accepted solely because generation or automated racing succeeded.
+roadmap item 3 accepted solely because generation or automated racing succeeded.
 
 ## Modular layout and export reference
 

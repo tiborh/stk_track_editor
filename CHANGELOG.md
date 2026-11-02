@@ -8,6 +8,29 @@ and initial plans are historical, not current instructions. Use the README for
 the current handoff, the roadmap for future work and the guides for commands.
 Retain failures and distinguish automated checks from human acceptance.
 
+## 2026-11-02 - Pyodide delivery trial prioritized
+
+The player approved trying Pyodide for a browser-only editor on GitHub Pages
+and asked to make it the first roadmap priority. Renumbered the existing
+roadmap items and aligned current handoff/authoring references, without marking
+the outstanding pickup gameplay checklist complete.
+
+Recorded the discussion and inspected-code findings in
+[the implementation brief](docs/PYODIDE.md): Pages cannot run the existing
+Python API; root-relative URLs need project-base handling; shared inspection
+and strict JSON decoding can be extracted from the HTTP server for a Pyodide
+module worker, keeping Python authoritative for validation and geometry.
+The brief also records file/security boundaries, startup and scaling costs,
+potential optimizations, compatibility/deployment questions, authoritative
+references, a proposed implementation sequence and parity/performance/browser
+acceptance checks.
+
+This entry records an approved experiment and documentation work only.
+No Pyodide runtime was installed or selected, no editor/server behavior or
+GitHub deployment settings changed, and no performance or hosted compatibility
+measurements were made. Blender/export and human gameplay acceptance remain
+separate; the implementation trial is the next task, not a delivered feature.
+
 ## 2026-11-02 - GitHub automation and browser CI
 
 Enabled Dependabot vulnerability alerts and security fixes, weekly pip updates

@@ -2,33 +2,65 @@
 
 [README](README.md) | [Authoring](docs/AUTHORING.md) | [Changelog](CHANGELOG.md)
 
-Proposed 2026-10-25; status updated 2026-10-26.
+Proposed 2026-10-25; priorities and status updated 2026-11-02.
 
 The following is the recommended implementation order, not an agreed commitment
-to every feature. **Item 1 is accepted; item 2 is implemented with human
-acceptance pending; items 3-8 remain planning only.** Iteration 2 remains the
+to every feature. **Item 1 is approved for the next implementation trial;
+item 2 is accepted; item 3 is implemented with human acceptance pending;
+items 4-9 remain planning only.** The Pyodide trial is not yet implemented or
+verified on GitHub Pages. Iteration 2 remains the
 human-accepted authoring baseline. Keep each increment independently playable
 and retain the accepted reference layouts and exports.
 The player's subsequent **"they look good"** feedback accepts item/nitro
 placement appearance. Full human collection/use/respawn acceptance was not
 explicitly reported; see [HANDOFF](HANDOFF.md) for the current next step.
 
-The progression prioritizes richer racing on the existing flat tracks, then
-separates road and terrain authoring before introducing height and crossings.
+The next priority is browser-only delivery using the shared Python core.
+The subsequent track progression preserves the pickup acceptance gate, then
+adds richer racing, separates road and terrain, and introduces height/crossings.
 Complexity is relative to this workspace, not an implementation-time estimate.
 
 | Order | Recommended increment | Relative complexity | Builds on |
 |---|---|---|---|
-| 1 | Diagnose and restore kart choice | Uncertain; potentially small | Known-working race command |
-| 2 | Place item boxes and nitro | Low-medium | Existing road sampling and editor |
-| 3 | Per-module road surfaces | Medium | Versioned layout extensions from step 2 |
-| 4 | Separate flat terrain layer | Medium | Surface/material handling from step 3 |
-| 5 | Additional flat road pieces | Medium-high | Established placement and surface semantics |
-| 6 | Elevation-aware roads and terrain | High | Separate terrain layer and explicit piece connections |
-| 7 | Grade-separated crossings and bridges | High-very high | Elevation, clearance and multi-passage connectivity |
-| 8 | Optional at-grade crossings or branching routes | Very high | Explicit route identity through shared locations |
+| 1 | Trial Pyodide and GitHub Pages delivery | Medium; compatibility/performance unmeasured | Shared Python inspection/geometry and existing browser checks |
+| 2 | Diagnose and restore kart choice | Uncertain; potentially small | Known-working race command |
+| 3 | Place item boxes and nitro | Low-medium | Existing road sampling and editor |
+| 4 | Per-module road surfaces | Medium | Versioned layout extensions from step 3 |
+| 5 | Separate flat terrain layer | Medium | Surface/material handling from step 4 |
+| 6 | Additional flat road pieces | Medium-high | Established placement and surface semantics |
+| 7 | Elevation-aware roads and terrain | High | Separate terrain layer and explicit piece connections |
+| 8 | Grade-separated crossings and bridges | High-very high | Elevation, clearance and multi-passage connectivity |
+| 9 | Optional at-grade crossings or branching routes | Very high | Explicit route identity through shared locations |
 
-## 1. Diagnose kart selection independently
+## 1. Trial a browser-only editor with Pyodide
+
+**Approved 2026-11-02 as the next priority; not implemented or deployed.**
+Read the [implementation brief](docs/PYODIDE.md) before starting; it records
+the inspected code, runtime model, deployment constraints, scalability
+assessment, proposed sequence, references and acceptance checks.
+
+Target `https://tiborh.github.io/stk_track_editor/`: visitors edit, validate and
+download layout JSON without installing Python or using a hosted Python API.
+GitHub Pages is static hosting; the current `/api/inspect` dependency prevents
+an unchanged deployment. Blender generation, exports and gameplay remain local.
+
+Extract shared inspection/strict JSON decoding from the HTTP server and run
+the same Python core through a pinned Pyodide runtime in a module Web Worker.
+Keep JavaScript responsible for UI/rendering, preserve the local server and
+its security boundaries, and do not duplicate validation or geometry rules.
+Make asset/example/worker paths work under the Pages project prefix.
+
+Prove local-versus-browser validation parity, run interaction checks on both
+delivery modes, measure cold/warm startup and larger-layout responsiveness,
+then verify the actual Pages deployment. Handle runtime/worker errors visibly;
+do not promise offline support, arbitrary native Python packages or unmeasured
+track-size/mobile performance. Keep the adapters replaceable if future
+requirements outgrow browser execution.
+
+This delivery experiment may proceed before pickup gameplay acceptance, but
+does not complete or waive that checklist before later track/gameplay changes.
+
+## 2. Diagnose kart selection independently
 
 **Practical target accepted 2026-10-26:** broader bundled and selected add-on
 choices completed isolated rendered races, and the player confirmed both the
@@ -49,7 +81,7 @@ game-setting changes with the player before applying them.
 This is a bounded maintenance investigation, not a prerequisite for changing
 the track format. If unresolved, continue feature work using the working command.
 
-## 2. Add road-relative pickup placement
+## 3. Add road-relative pickup placement
 
 **Implemented 2026-10-26; human acceptance pending.**
 See [Road-relative pickups](docs/AUTHORING.md#road-relative-pickups) for editor
@@ -76,7 +108,7 @@ Python validation authoritative and share it with editor diagnostics.
 Target: save/reopen a pickup-equipped circuit, generate it, and complete a race
 confirming collection, item use, respawning and sensible AI interaction.
 
-## 3. Add per-module road surfaces
+## 4. Add per-module road surfaces
 
 Begin with a small supported surface palette and a default matching the current
 asphalt. Keep material appearance and gameplay effects explicit: a dirt-looking
@@ -90,7 +122,7 @@ for every shape/material combination.
 Target: a mixed-surface circuit with reliable joins, visible transitions, working
 pickups and acceptable human/AI handling. Defer arbitrary painted road patches.
 
-## 4. Add a separate flat terrain layer
+## 5. Add a separate flat terrain layer
 
 Allow painting a small terrain palette around the road, initially at a constant
 height. Keep terrain cells independent of road occupancy: replacing a road must
@@ -105,7 +137,7 @@ Target: save/reopen and drive a circuit with varied surroundings, including an
 intentional off-road and rescue check. Hills, water mechanics and freeform
 sculpting remain out of scope for this increment.
 
-## 5. Expand flat road construction
+## 6. Expand flat road construction
 
 Add a small set of useful pieces, chosen from driving feedback: for example,
 broader bends or chicanes. Establish explicit piece footprints and connection
@@ -120,7 +152,7 @@ Target: a circuit using the new pieces that preserves lap counting, AI routing
 and rescue behavior. Continue requiring a single route; do not introduce branches
 merely to support more shapes.
 
-## 6. Introduce elevation-aware roads and terrain
+## 7. Introduce elevation-aware roads and terrain
 
 Extend shared road sampling with height and orientation so road meshes, pickups,
 markings, barriers, drivelines and checklines derive from the same geometry.
@@ -135,7 +167,7 @@ Retain flat layouts as unchanged defaults.
 Target: a complete race over a modest hill, including manual rescue and seam
 checks. This establishes the vertical geometry needed for bridges.
 
-## 7. Add bridges and grade-separated crossings
+## 8. Add bridges and grade-separated crossings
 
 Start with one controlled over/under crossing and its approach pieces, retaining
 one unambiguous race route. Represent the two passages explicitly: sharing a
@@ -149,7 +181,7 @@ refer to the intended passage, not merely its grid cell.
 Target: a figure-eight-style circuit with correct human/AI routing, lap counting
 and recovery above and below the crossing.
 
-## 8. Consider at-grade crossings and branches separately
+## 9. Consider at-grade crossings and branches separately
 
 These are optional later extensions, not automatic consequences of bridge
 support. An at-grade crossing with fixed straight-through passages differs from
@@ -171,5 +203,6 @@ Do not force these semantics into the current single-circuit validator early.
 - Keep build/play automation, 3D preview and decorative-object libraries separate
   from this sequence. They can be reconsidered when workflow friction justifies
   them, without blocking the track capabilities above.
-- Complete focused export and gameplay acceptance before the next increment;
-  successful generation alone does not establish correct racing behavior.
+- For track/gameplay increments, complete focused export and gameplay acceptance
+  before the next dependent increment; the browser-delivery trial does not waive
+  the pickup gate. Successful generation alone does not establish correct racing.
