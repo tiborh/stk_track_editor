@@ -60,6 +60,10 @@ reviewer approval. Dependency review rejects newly introduced dependencies
 with known vulnerabilities at low severity or above. CodeQL default setup
 analyzes Python, JavaScript and Actions on pull requests, default-branch pushes
 and a weekly schedule.
+The branch ruleset also blocks force pushes and deletion of `main`. Merged PR
+branches are deleted automatically. Auto-merge is available but must be
+enabled per PR; dependencies are not blanket-auto-approved. Report suspected
+vulnerabilities using the [security policy](../SECURITY.md).
 
 Copilot's agent browser tools are configured separately in
 [`.github/mcp.json`](../.github/mcp.json), using the shared `browser-tools-mcp`
