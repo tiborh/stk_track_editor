@@ -30,6 +30,7 @@ python3 -m unittest discover -s tools -p 'test_documentation.py'
 
 # Optional real-browser interaction check: Python Playwright and system Chromium
 python3 tools/check_track_editor_browser.py
+python3 tools/check_track_editor_browser.py --browser managed
 
 # Validate a complete layout without Blender
 python3 tools/track_layout.py track/layouts/pickup_oval.json
@@ -43,6 +44,11 @@ blender --background --factory-startup --disable-autoexec \
 Agent browser tools are separately configured in `.github/mcp.json` using the
 shared `browser-tools-mcp` launcher. See Development for machine setup; these
 MCP tools do not supply the Python Playwright dependency of the browser check.
+The managed-browser option requires an explicit Playwright browser install;
+see Development. GitHub Actions runs source checks on Python 3.10/3.13 and a
+separate Python 3.13 managed-Chromium browser job. Optional Python dependencies
+are pinned in `tools/requirements-browser.txt`; the editor runtime stays
+standard-library-only.
 
 Generation runs inside Blender's bundled Python; do not install `bpy` with pip.
 Both `io_scene_spm` and `io_antarctica_scene` must exist under the exporter

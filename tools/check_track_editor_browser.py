@@ -1,5 +1,6 @@
-"""Exercise the sketcher in system Chromium (optional Playwright required)."""
+"""Exercise the sketcher in system or managed Chromium (optional Playwright required)."""
 
+import argparse
 import json
 from http.server import ThreadingHTTPServer
 from pathlib import Path
@@ -15,19 +16,25 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--browser", choices=("system", "managed"), default="system",
+                        help="Chromium source (default: system); managed must be installed explicitly")
+    args = parser.parse_args()
     try:
         from playwright.sync_api import sync_playwright
         from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
     except ImportError as error:
         raise SystemExit("Browser check needs optional Python Playwright; the editor does not.") from error
-    chromium = shutil.which("chromium")
-    if chromium is None:
+    chromium = shutil.which("chromium") if args.browser == "system" else None
+    if args.browser == "system" and chromium is None:
         raise SystemExit("Browser check needs system Chromium.")
     server = ThreadingHTTPServer(("127.0.0.1", 0), EditorHandler)
     thread = threading.Thread(target=server.serve_forever)
     thread.start()
     try:
         with tempfile.TemporaryDirectory(prefix="track-editor-check-") as temporary, sync_playwright() as p:
+            if args.browser == "managed":
+                chromium = p.chromium.executable_path
             browser = p.chromium.launch(executable_path=chromium, headless=True)
             page = browser.new_page(accept_downloads=True)
             errors = []
